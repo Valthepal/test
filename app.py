@@ -1,6 +1,10 @@
 
 import streamlit as st
 import pandas as pd
+import plotly.express as px
+
+
+
 
 # Title of the app
 st.title("Researcher Profile Page")
@@ -48,3 +52,15 @@ if uploaded_file:
 st.header("Contact Information")
 email = "jane.doe@example.com"
 st.write(f"You can reach {name} at {email}.")
+
+
+data = pd.DataFrame({"x": [1, 2, 3], "y": [10, 20, 30]})
+
+# # Display the data in the Streamlit app
+st.write(data)
+
+# # Create a Plotly figure
+fig = px.line(data, x="x", y="y", title="Simple Plotly Example")
+
+# # Display the plot in the Streamlit app
+st.plotly_chart(fig)
